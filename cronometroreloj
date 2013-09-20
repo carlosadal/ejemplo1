@@ -1,0 +1,61 @@
+using System;
+using System.Threading; //Esta libreria permite usar Thread.Sleep
+
+namespace RelojCronom
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Int16 hor, min, seg;
+            
+
+            Console.WriteLine("elije una opcion \n");
+            Console.WriteLine("1. Reloj \n2. Cronometro \n3. Salir\n");
+            int opc = Int16.Parse(System.Console.ReadLine());
+
+            
+            switch (opc)
+            {
+                case 1:
+                    for (; ; ) 
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Reloj \n");
+                        Console.WriteLine(DateTime.Now); 
+                        Thread.Sleep(1000);
+
+                    }
+
+                   // break;
+
+                case 2:
+                    Console.Clear();
+
+                    for (hor = 0; hor < 1000; hor++) 
+                    {
+                      
+                        for (min = 0; min < 60; min++) 
+                        {
+                            for (seg = 0; seg < 60; seg++) 
+                            {
+                                     Console.WriteLine(hor.ToString("00") + "." + min.ToString("00") + "." + seg.ToString("00"));
+                                    System.Threading.Thread.Sleep(1000); 
+                                   Console.Clear();
+                                
+                            }
+                        }
+                    }
+                   
+
+                    break;
+                   
+            }
+            Console.ReadLine();
+            
+        }
+      }
+   }
+
+
+
